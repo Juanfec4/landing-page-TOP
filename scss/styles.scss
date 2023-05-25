@@ -1,0 +1,231 @@
+//Font
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+$site-font: "Roboto", sans-serif;
+
+//Colors
+$clr-dark-background: #1f2937;
+$clr-button: #3882f6;
+$clr-light-background: #e5e7eb;
+$clr-light-text: #f9faf8;
+$clr-dark-text: #1f2937;
+
+//Padding & margin
+$default-padding: 2rem;
+$default-margin: 2rem;
+$button-padding: 2rem;
+$side-margin: $default-margin * 2;
+
+//Buttons
+$border-radius: 8px;
+$border-width: 3px;
+
+//Box
+$box-size: 10rem;
+//DEFAULTS
+* {
+  margin: 0;
+  padding: 0;
+  font-family: $site-font;
+}
+
+//Large Heading
+h2 {
+  font-size: 3rem;
+  font-weight: bold;
+}
+//Lists
+li {
+  list-style: none;
+}
+
+//Links
+.link {
+  font-size: 1.125rem;
+  text-decoration: none;
+  color: inherit;
+}
+.secondary-text{
+    @extend .link;
+}
+//Logo
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+//Section Heading
+h3 {
+  font-size: 2.25rem;
+  font-weight: bolder;
+}
+
+//Quote Text
+.quote-text{
+    font-size: 2.25rem;
+    font-weight:light;
+    font-style: italic;
+}
+
+//HEADER
+.header{
+    background-color: $clr-dark-background;
+    display: flex;
+    justify-content: space-between;
+    padding: $default-padding;
+    &__site-title{
+        color: $clr-light-text;
+        margin-left: $side-margin;
+    }
+    &__nav-list{
+        display: flex;
+        gap: $default-margin;
+        margin-right: $side-margin;
+    }
+    &__nav-link{
+        color: $clr-light-text;
+    }
+}
+//FOOTER
+.footer{
+    background-color: $clr-dark-background;
+    padding: $default-padding;
+    text-align: center;
+    &__text{
+        color: $clr-light-text;
+    }
+}
+
+//Hero
+.hero{
+    background-color: $clr-dark-background;
+    display: flex;
+    padding: $default-padding calc($default-margin * 3);
+    gap: calc($default-margin * 2);
+    &__text-container{
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+    }
+    &__title{
+        color: $clr-light-text;
+    }
+    &__copy{
+        @extend .secondary-text;
+        color: $clr-light-background;
+        margin: $default-margin 0;
+    }
+    &__button-container{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    &__button-link{
+        color: $clr-light-text;
+        background-color: $clr-button;
+        padding: calc(0.25 * $button-padding) $button-padding;
+        text-decoration: none;
+        border-radius: $border-radius;
+    }
+    &__image{
+        width: 50vw;
+        max-height: 15rem;
+        aspect-ratio: 16/9;
+        background-color: gray;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    &__place-holder-text{
+        color: $clr-light-background;
+    }
+}
+
+//Gallery section
+.gallery{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: calc($default-padding * 4);
+    &__heading{
+        color: $clr-dark-text;
+        margin: $default-margin 0;
+    }
+    &__cards-container{
+        margin: 0 calc($side-margin * 2);
+        display: flex;
+        gap: calc($default-margin / 2);
+    }
+    &__card{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    &__card-square{
+        border: $clr-button solid $border-width;
+        border-radius: $border-radius;
+        height: $box-size;
+        aspect-ratio: 1;
+        margin-bottom: calc($default-margin / 2);
+    }
+    &__text{
+        color: $clr-dark-text;
+        text-align: center;
+    }
+}
+
+//Quote
+.quote{
+    background-color: $clr-light-background;
+    padding: $default-padding calc(4 * $default-padding);
+    &__text{
+        @extend .quote-text;
+        color: $clr-dark-text;
+        margin: $default-margin;
+    }
+    &__author{
+        color: $clr-dark-text;
+        font-weight: bold;
+        margin: $default-margin;
+        text-align: end;
+    }
+}
+
+//Call to action
+.call-to-action{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: calc(3 * $default-padding);
+    &__box{
+        background-color: $clr-button;
+        padding: $default-padding;
+        width: 80%;
+        aspect-ratio: 12/1;
+        display: flex;
+        align-items: center;
+        justify-content: space-around; 
+        border-radius: $border-radius;
+    }
+    &__text{
+        &--primary{
+            color:$clr-light-text;
+            font-weight: bold;
+        }
+        &--secondary{
+            color: $clr-light-background;
+        }
+    }
+    &__button-container{
+        border: $clr-light-text $border-width solid;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: $border-radius;
+    }
+    &__button-link{
+        padding: calc(0.25 * $button-padding) $button-padding;
+        text-decoration: none;
+        color: $clr-light-text;
+        @extend .link;
+    }
+}
